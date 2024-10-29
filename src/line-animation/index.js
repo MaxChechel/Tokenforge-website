@@ -8,6 +8,7 @@ let mm = gsap.matchMedia();
 const pathSvgs = document.querySelectorAll(".line-pulse");
 
 pathSvgs.forEach((svg, i) => {
+  svg.style.opacity = 1;
   const delay = gsap.utils.random(0, 1, 0.1);
   const tween = gsap.timeline({
     repeat: -1,
