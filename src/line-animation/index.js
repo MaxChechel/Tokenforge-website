@@ -50,24 +50,10 @@ const createAnimations = () => {
   });
 };
 
-// Clean up function
-const cleanup = () => {
-  cancelAnimationFrame(rafId);
-  masterTimeline.kill();
-  window.removeEventListener("resize", init);
-};
-
 // Initialize animations with RAF
 const init = () => {
-  cleanup(); // Clean up existing animations before reinitializing
   rafId = requestAnimationFrame(createAnimations);
 };
 
-// Add event listener for resize
-window.addEventListener("resize", init);
-
 // Initialize animations
 init();
-
-// Clean up on page unload
-window.addEventListener("unload", cleanup);
